@@ -1,0 +1,93 @@
+:root{
+    --primary-color:#1E90FF;
+    --secondary-color:#f5f5f5;
+    --text-color:#333;
+    --gradient-start:#1E90FF;
+    --gradient-end:#00BFFF;
+    --hover-gradient:linear-gradient(45deg,#1E90FF,#00BFFF);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;color:var(--text-color);background:var(--secondary-color);}
+a{text-decoration:none;color:inherit;transition:0.3s;}
+section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 20px;text-align:center;scroll-snap-align:start;transition:background 0.8s;}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;}
+h1{color:var(--primary-color);margin-bottom:20px;}
+p{max-width:700px;margin-bottom:20px;line-height:1.6;}
+
+/* Header */
+header{
+    position:fixed;top:0;left:0;width:100%;background:#fff;display:flex;justify-content:space-between;align-items:center;
+    padding:15px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.15);z-index:1000;transition:all 0.4s;
+}
+/* Header při scrollu */
+header.scrolled {
+    background: var(--primary-color);
+    color: #fff; /* bílý text */
+}
+
+header.scrolled .logo {
+    color: #fff;
+}
+
+header.scrolled nav li a {
+    color: #fff; /* bílý text odkazů */
+}
+
+header.scrolled nav li a:hover {
+    background: #00bfff; /* světlejší gradient efekt při hoveru */
+}
+
+header.scrolled .hamburger div {
+    background: #fff; /* bílý hamburger */
+}
+
+header.scrolled{background:var(--primary-color);color:#fff;}
+.logo{font-weight:bold;font-size:1.4em;color:var(--primary-color);transition:0.4s;}
+header.scrolled .logo{color:#fff;}
+nav ul{display:flex;list-style:none;gap:25px;}
+nav li a{font-weight:500;padding:5px 10px;border-radius:5px;transition:all 0.3s;}
+nav li a:hover{background:var(--hover-gradient);color:#fff;transform:scale(1.1);}
+.hamburger{display:none;flex-direction:column;cursor:pointer;gap:4px;}
+.hamburger div{width:25px;height:3px;background:var(--primary-color);transition:all 0.4s;}
+@media(max-width:768px){
+    nav ul{display:none;position:absolute;top:60px;right:30px;background:#fff;flex-direction:column;width:220px;padding:20px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.25);}
+    nav ul.show{display:flex;animation:menuOpen 0.4s ease-out forwards;}
+    @keyframes menuOpen{0%{opacity:0;transform:translateY(-20px);}100%{opacity:1;transform:translateY(0);}}
+    .hamburger{display:flex;}
+}
+
+/* Profilový kroužek */
+.profile-pic{width:170px;height:170px;border-radius:50%;overflow:hidden;margin-bottom:20px;border:5px solid var(--primary-color);
+box-shadow:0 5px 25px rgba(0,0,0,0.25);transition:transform 0.5s, box-shadow 0.5s;}
+.profile-pic:hover{transform:scale(1.08);box-shadow:0 10px 30px rgba(0,0,0,0.35);}
+.profile-pic img{width:100%;height:100%;object-fit:cover;}
+
+/* Fotky */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;width:100%;max-width:1000px;}
+.gallery img{width:100%;cursor:pointer;border-radius:12px;transition:all 0.5s;transform-origin:center center;}
+.gallery img:hover{transform:scale(1.12) rotate(2deg);box-shadow:0 12px 25px rgba(0,0,0,0.3);}
+
+/* Lightbox */
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;justify-content:center;align-items:center;opacity:0;visibility:hidden;transition:opacity 0.4s;}
+.lightbox img{max-width:90%;max-height:80%;border-radius:10px;transform:scale(0.95);transition:transform 0.4s;}
+.lightbox.show img{transform:scale(1);}
+.lightbox.show{opacity:1;visibility:visible;}
+
+/* Kontakt */
+form{display:flex;flex-direction:column;gap:15px;width:100%;max-width:400px;}
+input,textarea{padding:12px;border:1px solid #ccc;border-radius:6px;font-size:1em;transition:border 0.3s, box-shadow 0.3s;}
+input:focus,textarea:focus{border-color:var(--primary-color);box-shadow:0 0 10px rgba(30,144,255,0.3);outline:none;}
+button{padding:12px;background:var(--primary-color);color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;transition:all 0.3s;}
+button:hover{background:#0073e6;transform:scale(1.08);box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+
+/* Scroll animace */
+[data-animate]{opacity:0;transform:translateY(40px);transition:all 0.7s ease-out;}
+[data-animate].show{opacity:1;transform:translateY(0);}
+
+/* Sekce gradient/parallax efekt */
+section:nth-of-type(odd){background:linear-gradient(120deg,#e6f0ff,#ffffff);}
+section:nth-of-type(even){background:#f0f8ff;}
+
+/* Mikrointerakce odkazy */
+a:hover{color:var(--primary-color);transform:scale(1.05);}
