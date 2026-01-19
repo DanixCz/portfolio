@@ -1,97 +1,261 @@
-<!--<?php
-// index.php - Prémiová animační verze
-?>-->
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Daniel Zeman</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Zeman - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Navigation Header -->
+    <header>
+        <div class="container">
+            <div class="logo">DZ</div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Úvod</a></li>
+                    <li><a href="#about">O mně</a></li>
+                    <li><a href="#education">Vzdělání</a></li>
+                    <li><a href="#skills">Dovednosti</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <div class="logo">Daniel Zeman</div>
-    <nav>
-        <ul>
-            <li><a href="#info" >O mně</a></li>
-            <li><a href="#photos">Fotky</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
-        <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
-    </nav>
-</header>
+    <!-- Hero Section with Animated Background -->
+    <section id="hero" class="hero">
+        <div class="animated-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="blob blob-4"></div>
+            <div class="blob blob-5"></div>
+        </div>
+        <div class="container hero-content" data-animate>
+            <h1>Daniel Zeman</h1>
+            <p class="subtitle">AI Specialista | Web Developer | Student</p>
+            <p class="description">Střední odborné učiliště elektrotechnické Plzeň</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="label">Město:</span> Plzeň
+                </div>
+                <div class="contact-item">
+                    <span class="label">Email:</span> <a href="mailto:dan866663@gmail.com">dan866663@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Telefon:</span> <a href="tel:+420602694229">602 694 229</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">GitHub:</span> <a href="https://github.com/DanixCz" target="_blank">DanixCz</a>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Kontaktujte mě</a>
+                <a href="https://github.com/DanixCz" target="_blank" class="btn btn-secondary">GitHub Profil</a>
+            </div>
+        </div>
+    </section>
 
-<section id="info" style="background: linear-gradient(90deg, #0077ff, #00ffff);padding:80px 20px;">
-    <div data-animate style="max-width:1000px; color: white; display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;">
-        <!-- Levá strana: text -->
-        <div>
-            <h1 style="color: white;">O mně</h1>
-            <p>
-                Jmenuji se <strong>Daniel Zeman</strong> a jsem student 
-                <strong>Středního odborného učiliště elektrotechnického Plzeň</strong>. 
-                Zaměřuji se na IT, webovou tvorbu a grafiku.
-            </p>
-            <p>
-                Mezi mé silné stránky patří <strong>úprava fotografií</strong>, tvorba webových stránek a práce s moderními grafickými nástroji. 
-                Baví mě experimentovat s designem, vizuálními efekty a interaktivními prvky webu.
-            </p>
-            <p>
-                Kromě studia se zajímám o programování, tvorbu mini projektů a zlepšování svých dovedností v oblasti webového designu a UX.
-            </p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 data-animate>Profil</h2>
+            <div class="content-box" data-animate>
+                <p>
+                    Jsem student Středního odborného učiliště elektrotechnického v Plzni se zaměřením na informační technologie. 
+                    Zajímám se o správu počítačových systémů, práci s hardwarem a základní administraci IT prostředí.
+                </p>
+                <p>
+                    Jsem spolehlivý, pečlivý a mám chuť se dále vzdělávat a rozvíjet v oblasti IT techniky a správy systémů. 
+                    Rád pracuji na projektech, které mě posunují dál a rozšiřují mé vědomosti.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 data-animate>Vzdělání</h2>
+            <div class="education-timeline" data-animate>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2022–2026</h3>
+                        <p class="institution">Střední odborné učiliště elektrotechnické Plzeň</p>
+                        <p class="detail"><strong>Obor:</strong> Informační technologie</p>
+                        <p class="detail"><strong>Status:</strong> Probíhající studium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 data-animate>Odborné Dovednosti</h2>
             
-            <!-- Action Buttons -->
-            <div style="margin-top:25px; display:flex; flex-wrap:wrap; gap:15px; justify-content:center;">
-                <a class="a" href="https://github.com/DanixCz" target="_blank" class="action-btn">GitHub</a>
-                <a class="a" href="https://www.linkedin.com/in/danielzeman" target="_blank" class="action-btn">LinkedIn</a>
-                <a class="a" href="cv.pdf" target="_blank" class="action-btn">Stáhnout CV</a>
-                <a class="a" href="#contact" class="action-btn">Kontaktovat mě</a>
+            <div class="skills-grid" data-animate>
+                <div class="skill-category">
+                    <h3>Správa Systémů</h3>
+                    <ul>
+                        <li>Základní správa operačních systémů Windows</li>
+                        <li>Znalost práce s počítačovým hardwarem</li>
+                        <li>Instalace a konfigurace software</li>
+                        <li>Základy Windows Server</li>
+                        <li>Virtualizace (VirtualBox)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>IT & Sítě</h3>
+                    <ul>
+                        <li>Základy počítačových sítí</li>
+                        <li>Základní orientace v síťových službách</li>
+                        <li>Práce s Git a GitHub</li>
+                        <li>Základní orientace v bezpečnosti IT</li>
+                        <li>Windows 10 / 11</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Web & Aplikace</h3>
+                    <ul>
+                        <li>Základy HTML, CSS</li>
+                        <li>JavaScript základy</li>
+                        <li>Práce s kancelářskými aplikacemi (MS Word, Excel, Outlook)</li>
+                        <li>Úprava fotografií (photo editing)</li>
+                        <li>Web design & UX</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="additional-skills" data-animate>
+                <h3>Další Dovednosti & Vlastnosti</h3>
+                <div class="skills-tags">
+                    <span class="tag">Zodpovědný přístup</span>
+                    <span class="tag">Týmová spolupráce</span>
+                    <span class="tag">Ochota se učit</span>
+                    <span class="tag">Řešení problémů</span>
+                    <span class="tag">Komunikace</span>
+                    <span class="tag">Adaptabilita</span>
+                </div>
+            </div>
+
+            <div class="projects-section" data-animate>
+                <h3>Praxe & Projektů</h3>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <h4>Školní Projekty IT</h4>
+                        <p>Projekty zaměřené na správu IT a práci s operačními systémy</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>Stop Motion Animace</h4>
+                        <p>Tvorba kreatívních stop motion animací</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>Web Development</h4>
+                        <p>Tvorba jednoduchých webových stránek a portfolia</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Pravá strana: profilový obrázek -->
-        <div style="display:flex; justify-content:center;">
-            <div class="profile-pic" data-animate>
-                <img src="profile.jpg" alt="Profilová fotka">
+    <!-- Languages Section -->
+    <section id="languages" class="languages">
+        <div class="container">
+            <h2 data-animate>Jazykové Znalosti</h2>
+            <div class="languages-grid" data-animate>
+                <div class="language-item">
+                    <h3>Český Jazyk</h3>
+                    <p class="level">Rodilý mluvčí</p>
+                    <div class="level-bar">
+                        <div class="level-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <h3>Anglický Jazyk</h3>
+                    <p class="level">Základní až mírně pokročilá</p>
+                    <div class="level-bar">
+                        <div class="level-fill" style="width: 65%;"></div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-animate>Kontakt</h2>
+            <div class="contact-wrapper" data-animate>
+                <div class="contact-details">
+                    <h3>Informace pro Kontakt</h3>
+                    <div class="contact-item-full">
+                        <span class="icon">✉️</span>
+                        <div>
+                            <p class="label">Email</p>
+                            <a href="mailto:dan866663@gmail.com">dan866663@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item-full">
+                        <span class="icon">📞</span>
+                        <div>
+                            <p class="label">Telefon</p>
+                            <a href="tel:+420602694229">+420 602 694 229</a>
+                        </div>
+                    </div>
+                    <div class="contact-item-full">
+                        <span class="icon">📍</span>
+                        <div>
+                            <p class="label">Město</p>
+                            <p>Plzeň, Česká Republika</p>
+                        </div>
+                    </div>
+                    <div class="contact-item-full">
+                        <span class="icon">🔗</span>
+                        <div>
+                            <p class="label">GitHub</p>
+                            <a href="https://github.com/DanixCz" target="_blank">github.com/DanixCz</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+                    <input type="email" id="email" name="email" placeholder="Váš e-mail" required>
+                    <textarea id="message" name="message" placeholder="Zpráva" rows="6" required></textarea>
+                    <button type="submit" class="btn btn-primary">Odeslat Zprávu</button>
+                    <div id="form-response" class="form-response" style="display: none; margin-top: 15px; padding: 15px; border-radius: 8px; text-align: center;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Daniel Zeman. Všechna práva vyhrazena.</p>
+            <div class="social-links">
+                <a href="https://github.com/DanixCz" target="_blank" title="GitHub">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" onclick="closeLightbox()">
+        <img src="" alt="Zvětšená fotka">
     </div>
-</section>
-
-<section id="photos">
-    <h1 data-animate>Moje Fotky</h1>
-    <div class="gallery" data-animate>
-        <img src="photo1.jpg" alt="Foto 1">
-        <img src="photo2.jpg" alt="Foto 2">
-        <img src="photo3.jpg" alt="Foto 3">
-        <img src="photo4.jpg" alt="Foto 4">
-    </div>
-</section>
-
-<section id="contact">
-    <h1 data-animate>Kontakt</h1>
-    <form data-animate method="post" action="">
-        <input type="text" name="name" placeholder="Vaše jméno" required>
-        <input type="email" name="email" placeholder="Váš e-mail" required>
-        <textarea name="message" placeholder="Zpráva" rows="5" required></textarea>
-        <button type="submit">Odeslat</button>
-    </form>
-<!--    <?php
-    if($_SERVER['REQUEST_METHOD']==='POST'){
-        $name=htmlspecialchars($_POST['name']);
-        $email=htmlspecialchars($_POST['email']);
-        $message=htmlspecialchars($_POST['message']);
-        echo "<p style='margin-top:15px;color:green;'>Děkuji, $name! Vaše zpráva byla odeslána.</p>";
-    }
-    ?>-->
-</section>
-
-<div class="lightbox" onclick="closeLightbox()">
-    <img src="" alt="Zvětšená fotka">
-</div>
-
 </body>
 </html>
